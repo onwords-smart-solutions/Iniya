@@ -22,7 +22,6 @@ def get_users_room(homes):
             room_name = rooms[room]['name']
             _rooms.append(room_name.lower())
 
-
     # print("returning rooms")
     return _rooms
 def extract_device_names(data):
@@ -37,7 +36,7 @@ def extract_device_names(data):
 
 def get_users_device_names(homes):
     _devices = extract_device_names(homes)
-    print(_devices)
+    #print(_devices)
     return _devices
 
     # for home_ids in homes:
@@ -66,6 +65,7 @@ def get_users_device_names(homes):
 def generate_bigrams(text):
     words = text.split()
     bigrams = zip(words, words[1:])
+
     return [" ".join(bigram) for bigram in bigrams]
 
 

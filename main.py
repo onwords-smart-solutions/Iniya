@@ -1,7 +1,13 @@
-import iniya
+from fastapi import FastAPI
+from fastapi.responses import JSONResponse
+from iniya import process_command
 
-while 1:
-    command = input("Enter the command : ")
-    # command = "turn on the lights"
-    iniya.process_command(command)
-    # input()
+app = FastAPI()
+
+@app.post("/process-command")
+async def process_command_endpoint(command: str):
+    try:
+        process_command(command)
+        return JSONResponse(content={"message": "Command processed successfully"})
+    except Exception as e:
+        return JSONResponse(content={"error": str(e)}, status_code=500)
