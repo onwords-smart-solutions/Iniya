@@ -1,5 +1,5 @@
 
-controll_words = ["on", "off", "increase", "decrease ", "set", "change"]
+controll_words = ["on", "off", "increase", "decrease ", "set", "change", "start", "stop"]
 
 fan_speed_word = ["speed", "speed1", "speed2", "speed3", "speed4", "speed5"]
 
